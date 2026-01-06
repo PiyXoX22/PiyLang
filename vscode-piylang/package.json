@@ -1,0 +1,29 @@
+{
+    "name": "piylang",
+    "displayName": "PiyLang",
+    "description": "Bahasa Pemrograman PiyLang",
+    "version": "0.0.1",
+    "publisher": "piyxox",
+    "engines": {
+      "vscode": "^1.80.0"
+    },
+    "categories": ["Programming Languages"],
+    "contributes": {
+      "languages": [
+        {
+          "id": "piylang",
+          "aliases": ["PiyLang"],
+          "extensions": [".piy"],
+          "configuration": "./language-configuration.json"
+        }
+      ],
+      "grammars": [
+        {
+          "language": "piylang",
+          "scopeName": "source.piylang",
+          "path": "./syntaxes/piylang.tmLanguage.json"
+        }
+      ]
+    }
+  }
+  

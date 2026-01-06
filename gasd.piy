@@ -1,0 +1,56 @@
+# =====================================
+# CONTOH SCRIPT PIYLANG VERSI INDO
+# =====================================
+
+# ---------- VARIABEL ----------
+nama = "Andika"
+umur = 25
+angka = [1, 2, 3, 4, 5]
+
+# ---------- CETAK ----------
+cetak "Halo " + nama
+cetak "Umurmu: " + umur
+
+# ---------- INPUT ----------
+umur_baru = masukkan "Masukkan umur baru:"
+
+# ---------- PERCABANGAN ----------
+jika umur_baru > 30:
+    cetak "Umurmu sudah di atas 30"
+atau_jika umur_baru > 20:
+    cetak "Umurmu di atas 20"
+kalau_tidak:
+    cetak "Umurmu muda"
+
+# ---------- PERULANGAN ----------
+ulang i dari 1 sampai 5:
+    cetak "Ulang ke-" + i
+
+selama umur_baru < 30:
+    cetak "Masih di bawah 30"
+    umur_baru = umur_baru + 1
+    jika umur_baru == 28:
+        berhenti
+
+# ---------- FUNGSI ----------
+fungsi hitung_luas(panjang, lebar):
+    luas = panjang * lebar
+    kembali luas
+
+hasil = hitung_luas(5, 3)
+cetak "Luas = " + hasil
+
+# ---------- TRY / EXCEPT ----------
+coba:
+    x = angka[10]  # index salah
+    cetak x
+kecuali:
+    cetak "Terjadi error: " + error
+
+# ---------- LANJUT / BERHENTI ----------
+ulang j dari 1 sampai 10:
+    jika j % 2 == 0:
+        lanjut
+    cetak "Ganjil: " + j
+    jika j == 7:
+        berhenti

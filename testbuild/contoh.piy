@@ -1,0 +1,13 @@
+cetak "===== Cek Genap / Ganjil ====="
+
+ulang ulang_program dari 1 sampai 100:
+    angka = masukan "Masukkan angka:"
+
+    jika int(angka) % 2 == 0:
+        cetak angka + " adalah Bilangan Genap"
+    else:
+        cetak angka + " adalah Bilangan Ganjil"
+
+    lagi = masukan "Cek lagi? (ya/tidak):"
+    jika lagi != "ya":
+        hentikan

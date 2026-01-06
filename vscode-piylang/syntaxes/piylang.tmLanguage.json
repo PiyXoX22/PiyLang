@@ -1,0 +1,36 @@
+{
+  "name": "PiyLang",
+  "scopeName": "source.piylang",
+  "fileTypes": ["piy"],
+  "patterns": [
+    { "include": "#keywords" },
+    { "include": "#numbers" },
+    { "include": "#strings" },
+    { "include": "#comments" }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.piylang",
+          "match": "\\b(cetak|jika|selama|fungsi|kembali|selain|ulang|masukan|hentikan|lanjutkan)\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.piylang", "match": "\\b\\d+(\\.\\d+)?\\b" }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        { "name": "string.quoted.double.piylang", "match": "\".*?\"" }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.piylang", "match": "#.*$" }
+      ]
+    }
+  }
+}
