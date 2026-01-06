@@ -1,6 +1,3 @@
-# PiyLang
-Bahasa Pemrograman Berbasis Bahasa Indonesia
-
 # PiyLang 🖋️
 
 Bahasa Pemrograman **PiyLang** (Indonesia Style) – dibuat untuk belajar pemrograman dengan sintaks mirip bahasa Indonesia.
@@ -13,34 +10,34 @@ Bahasa Pemrograman **PiyLang** (Indonesia Style) – dibuat untuk belajar pemrog
 
 ```bash
 git clone https://github.com/piyxox22/PiyLang.git
-Atau jika ZIP, ekstrak folder PiyLang.
+```
 
-Masuk ke folder hasil ekstrak:
+2. Ekstrak ZIP file: 
+Ekstrak bisa menggunakan Winrar.
 
-bash
-Copy code
+3. Masuk ke folder lalu buka terminal: 
+```bash
 cd PiyLang
-Install package dengan pip:
-
-bash
-Copy code
+```
+:
+4. Install package dengan pip: 
+```bash
 pip install .
-Pastikan menggunakan Python 3.8+.
+```
 
 🚀 Cara Menggunakan
 Setelah install, kamu bisa langsung jalankan interpreter PiyLang lewat terminal:
 
-bash
-Copy code
+```bash
 piy namafile.piy
+```
 Contoh:
-
-bash
-Copy code
+```bash
 piy contoh.piy
+```
+
 📝 Contoh Kode PiyLang
-piylang
-Copy code
+```bash
 # Cetak teks
 cetak "Halo PiyLang!"
 
@@ -53,3 +50,4 @@ jika 5 > 3:
     cetak "Benar!"
 kalau_tidak:
     cetak "Salah!"
+```
