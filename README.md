@@ -12,14 +12,14 @@ Bahasa Pemrograman **PiyLang** (Indonesia Style) – dibuat untuk belajar pemrog
 git clone https://github.com/piyxox22/PiyLang.git
 ```
 
-2. Ekstrak ZIP file: 
+2. Ekstrak ZIP file:  
 Ekstrak bisa menggunakan Winrar.
 
 3. Masuk ke folder lalu buka terminal: 
 ```bash
 cd PiyLang
 ```
-:
+
 4. Install package dengan pip: 
 ```bash
 pip install .
