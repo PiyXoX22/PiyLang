@@ -3,10 +3,42 @@
 # =====================================
 
 # ===================== GUI INPUT =====================
-GUI_INPUT = None  # nanti bisa diassign dari IDE
+GUI_INPUT = gui_input  # nanti bisa diassign dari IDE
 
 variabel = {}
 fungsi = {}
+
+# ===================== KEYWORDS PIYLANG =====================
+KEYWORDS = [
+    "jika",
+    "atau_jika",
+    "kalau_tidak",
+    "ulang",
+    "selama",
+    "fungsi",
+    "kembali",
+    "berhenti",
+    "lanjut",
+    "cetak",
+    "masukkan",
+    "coba",
+    "kecuali",
+    "import",
+    "benar",
+    "salah"
+]
+
+
+# ===================== SNIPPETS =====================
+SNIPPETS = {
+    "jika": "jika kondisi:\n    ",
+    "atau_jika": "atau_jika kondisi:\n    ",
+    "kalau_tidak": "kalau_tidak:\n    ",
+    "ulang": "ulang i dari 1 sampai 10:\n    ",
+    "selama": "selama kondisi:\n    ",
+    "fungsi": "fungsi nama():\n    kembali "
+}
+
 
 # ===================== EXCEPTIONS =====================
 class KembaliException(Exception):
@@ -124,6 +156,38 @@ def hitung(expr, baris):
 
     raise PiyLangError("Ekspresi tidak dikenali", baris)
 
+# ===================== AUTOCOMPLETE ENGINE =====================
+
+def autocomplete(teks):
+    if not teks.strip():
+        return []
+
+    kata = teks.split()[-1]
+    saran = set()
+
+    # keyword & snippet
+    for k in KEYWORDS:
+        if k.startswith(kata):
+            saran.add(SNIPPETS.get(k, k))
+
+    # variabel
+    for v in variabel.keys():
+        if v.startswith(kata):
+            saran.add(v)
+
+    # fungsi
+    for f in fungsi.keys():
+        if f.startswith(kata):
+            saran.add(f + "()")
+
+    # histori
+    for h in HISTORY:
+        if h.startswith(kata):
+            saran.add(h)
+
+    return sorted(saran)
+HISTORY = []
+
 # ===================== INTERPRETER =====================
 def jalankan(kode):
     baris_baris = kode.split("\n")
@@ -132,6 +196,12 @@ def jalankan(kode):
     while i < len(baris_baris):
         baris = baris_baris[i].rstrip()
         baris_ke = i + 1
+
+        # simpan histori kode
+        if baris.strip() and not baris.strip().startswith("#"):
+            HISTORY.append(baris.strip())
+
+
 
         if not baris.strip() or baris.strip().startswith("#"):
             i += 1
@@ -326,6 +396,8 @@ def jalankan(kode):
             variabel[nama.strip()] = hitung(nilai.strip(), baris_ke)
 
         i += 1
+
+        
 
 # ===================== ENTRY POINT =====================
 def jalankan_file(file):

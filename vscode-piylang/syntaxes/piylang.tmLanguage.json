@@ -1,5 +1,5 @@
 {
-  "name": "PiyLang",
+  "name": "piylang",
   "scopeName": "source.piylang",
   "fileTypes": ["piy"],
   "patterns": [
@@ -13,23 +13,32 @@
       "patterns": [
         {
           "name": "keyword.control.piylang",
-          "match": "\\b(cetak|jika|selama|fungsi|kembali|selain|ulang|masukan|hentikan|lanjutkan)\\b"
+          "match": "\\b(cetak|jika|selama|fungsi|kembali|ulang|masukkan|berhenti|lanjut)\\b"
         }
       ]
     },
     "numbers": {
       "patterns": [
-        { "name": "constant.numeric.piylang", "match": "\\b\\d+(\\.\\d+)?\\b" }
+        {
+          "name": "constant.numeric.piylang",
+          "match": "\\b\\d+(\\.\\d+)?\\b"
+        }
       ]
     },
     "strings": {
       "patterns": [
-        { "name": "string.quoted.double.piylang", "match": "\".*?\"" }
+        {
+          "name": "string.quoted.double.piylang",
+          "match": "\"([^\"\\\\]|\\\\.)*\""
+        }
       ]
     },
     "comments": {
       "patterns": [
-        { "name": "comment.line.piylang", "match": "#.*$" }
+        {
+          "name": "comment.line.piylang",
+          "match": "#.*$"
+        }
       ]
     }
   }

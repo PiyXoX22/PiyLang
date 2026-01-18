@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.piy]
+@="PiyLangFile"
+
+[HKEY_CLASSES_ROOT\PiyLangFile]
+@="PiyLang Source File"
+
+[HKEY_CLASSES_ROOT\PiyLangFile\DefaultIcon]
+@="D:\\PiyLang\\piyicon.ico"
+
+[HKEY_CLASSES_ROOT\PiyLangFile\Shell\Open\Command]
+@="\"D:\\PiyLang\\dist\\main.exe\" \"%1\""
